@@ -8,14 +8,14 @@ public class LessCompilerTest extends TestCase {
     LessCompiler c = new LessCompiler();
     assertEquals("#blah {\n" +
       "  foo: bar;\n" +
-      "}\n", c.compile("#blah { foo: bar }"));
+      "}\n", c.compile("", "#blah { foo: bar }", null));
   }
   
   public void testLessVars() {
     LessCompiler c = new LessCompiler();
     assertEquals("#blah {\n" +
       "  foo: bar;\n" +
-      "}\n", c.compile("@foo : bar; #blah { foo: @foo }"));
+      "}\n", c.compile("", "@foo : bar; #blah { foo: @foo }", null));
   }
 
 }

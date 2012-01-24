@@ -5,6 +5,8 @@ uses javax.servlet.http.HttpServletRequest;
 uses java.io.IOException;
 uses java.io.InputStream;
 uses java.util.Scanner;
+uses java.io.File
+uses java.net.URL
 
 class LessFilter implements Filter {
 
@@ -21,7 +23,8 @@ class LessFilter implements Filter {
         servletResponse.getOutputStream().write(lessSource.Bytes)
       } else {
         var c = new LessCompiler()
-        var result = c.compile(lessSource)
+        var root = req.FullURL.substring(0, req.FullURL.lastIndexOf('/'))
+        var result = c.compile(getFileName(contextPath), lessSource, root)
         servletResponse.getOutputStream().write(result.Bytes)
       }
     } else {
@@ -29,8 +32,12 @@ class LessFilter implements Filter {
     }
   }
 
+  function getFileName(str : String) : String {
+    return str.substring(str.lastIndexOf('/'))
+  }
+
   function getLessSource(req: HttpServletRequest): String {
-    var resourceAsStream = req.ServletContext.getResourceAsStream(req.PathInfo)
+    var resourceAsStream = req.ServletContext.getResourceAsStream(req.ServletPath + "/" + req.PathInfo)
     return new Scanner(resourceAsStream).useDelimiter("\\A").next()
   }
 
