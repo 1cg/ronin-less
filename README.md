@@ -18,7 +18,7 @@ Usage
 -----
 
 Once you've installed the filter, you can put LessCSS files in your `html/public' folder, and,
-when you request them, they will be automatically compiled to Javascript.
+when you request them, they will be automatically compiled to CSS.
 
 So `http://localhost:8080/public/scripts/example.less` with this content:
 
