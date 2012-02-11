@@ -49,6 +49,7 @@
       <groupId>org.gosu-lang.ronin</groupId>
       <artifactId>ronin-test</artifactId>
       <version>0.9.1</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.mortbay.jetty</groupId>
