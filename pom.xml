@@ -23,9 +23,9 @@
   </repositories>
 
   <scm>
-    <connection>scm:git:git@github.com:gosu-lang/ronin-less.git</connection>
-    <url>scm:git:git@github.com:gosu-lang/ronin-less.git</url>
-    <developerConnection>scm:git:git@github.com:gosu-lang/ronin-less.git</developerConnection>
+    <connection>scm:git:git@github.com:carsongross/ronin-less.git</connection>
+    <url>scm:git:git@github.com:carsongross/ronin-less.git</url>
+    <developerConnection>scm:git:git@github.com:carsongross/ronin-less.git</developerConnection>
   </scm>
 
   <dependencies>
