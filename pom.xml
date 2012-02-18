@@ -1,46 +1,38 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.gosu-lang.ronin</groupId>
   <artifactId>ronin-less</artifactId>
-  <version>0.1-SNAPSHOT</version>
+  <version>0.4-SNAPSHOT</version>
   <packaging>jar</packaging>
+
+  <parent>
+    <groupId>org.gosu-lang</groupId>
+    <artifactId>gosu-project-parent</artifactId>
+    <version>4</version>
+  </parent>
 
   <name>Ronin Less Plugin</name>
 
   <repositories>
     <repository>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <id>gosu-lang.org</id>
-      <name>Official Gosu website</name>
-      <url>http://gosu-lang.org/m2</url>
+      <id>gosu-lang.org-releases</id>
+      <name>Official Gosu website (releases)</name>
+      <url>http://gosu-lang.org/nexus/content/groups/releases</url>
     </repository>
   </repositories>
-  <pluginRepositories>
-    <pluginRepository>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <id>gosu-lang.org</id>
-      <name>Official Gosu website</name>
-      <url>http://gosu-lang.org/m2</url>
-    </pluginRepository>
-  </pluginRepositories>
+
+  <scm>
+    <connection>scm:git:git@github.com:gosu-lang/ronin-less.git</connection>
+    <url>scm:git:git@github.com:gosu-lang/ronin-less.git</url>
+    <developerConnection>scm:git:git@github.com:gosu-lang/ronin-less.git</developerConnection>
+  </scm>
 
   <dependencies>
     <dependency>
       <groupId>org.gosu-lang.ronin</groupId>
       <artifactId>ronin</artifactId>
-      <version>0.9.1-SNAPSHOT</version>
+      <version>0.9.3</version>
     </dependency>
     <dependency>
       <groupId>rhino</groupId>
@@ -56,7 +48,8 @@
     <dependency>
       <groupId>org.gosu-lang.ronin</groupId>
       <artifactId>ronin-test</artifactId>
-      <version>0.9.1-SNAPSHOT</version>
+      <version>0.9.3</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.mortbay.jetty</groupId>
@@ -98,17 +91,8 @@
       <plugin>
         <groupId>org.gosu-lang</groupId>
         <artifactId>maven-gosu-plugin</artifactId>
-        <version>1.0</version>
-        <executions>
-          <execution>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>insert-gosu-artifact</goal>
-            </goals>
-          </execution>
-        </executions>
         <configuration>
-          <gosuVersion>0.9-SNAPSHOT</gosuVersion>
+          <gosuVersion>0.9-10</gosuVersion>
         </configuration>
       </plugin>
     </plugins>
